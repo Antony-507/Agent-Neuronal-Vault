@@ -19,9 +19,8 @@
   <br><br>
   <p>
     <b>Interactive Demonstration:</b> Automatic AI Request Documentation & Vault Expansion
-    <br>
-    <a href="assets/auto-learning-demo.mp4"><b>[Watch Video Demonstration (MP4)]</b></a>
   </p>
+  <img src="assets/auto-learning-demo.gif" alt="Auto-Learning Demonstration" width="750" />
 </div>
 
 ---
@@ -318,7 +317,7 @@ Whenever you work with **Antigravity**, **Claude Code**, **Cursor**, **Windsurf*
 neural-vault-brain/
 ├── assets/
 │   ├── vault-ai-interface.png        # Screenshot of Vault AI & Obsidian Interface
-│   └── auto-learning-demo.mp4        # Video demonstration of automated documentation
+│   └── auto-learning-demo.gif        # Animated demonstration of automated documentation
 ├── scripts/
 │   ├── neural_vault_brain.py         # Core engine, CLI and RAG interface
 │   └── neural_config.json            # Configuration parameters
