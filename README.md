@@ -15,7 +15,7 @@
 </div>
 
 <div align="center">
-  <img src="assets/vault-ai-interface.png" alt="Neural Vault AI Interface" width="750" />
+  <img src="assets/vault-ai-interface-v2.png" alt="Neural Vault AI Interface" width="750" />
   <br><br>
   <p>
     <b>Interactive Demonstration:</b> Automatic AI Request Documentation & Vault Expansion
@@ -316,7 +316,7 @@ Whenever you work with **Antigravity**, **Claude Code**, **Cursor**, **Windsurf*
 ```text
 neural-vault-brain/
 ├── assets/
-│   ├── vault-ai-interface.png        # Screenshot of Vault AI & Obsidian Interface
+│   ├── vault-ai-interface-v2.png        # Screenshot of Vault AI & Obsidian Interface
 │   └── auto-learning-demo.gif        # Animated demonstration of automated documentation
 ├── scripts/
 │   ├── neural_vault_brain.py         # Core engine, CLI and RAG interface
