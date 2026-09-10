@@ -213,6 +213,33 @@ Edit `config.json` to customize the brain:
 
 ---
 
+## 🎓 How to "Train" Your Vault
+
+Because this is a structural network rather than a pre-trained LLM, **your Obsidian vault is the neural network**. "Training" it means improving your notes and the connections between them. 
+
+Every time you write in Obsidian, you are wiring the brain. Here are the 4 ways to train it:
+
+### 1. Strengthen Synapses (Improve Propagation)
+The system propagates activation through `[[WikiLinks]]`. 
+* **How to train:** Whenever you create a new note, link it to existing relevant notes. If Note A links to Note B, any query that activates Note A will send an electrical "bonus" to Note B.
+* *Example:* If you write a note about a UI bug, make sure to include a link to `[[UI-Architecture]]`.
+
+### 2. Sharpen Receptors (Use Tags)
+Tags are heavily weighted (25%) because they act as direct conceptual receptors.
+* **How to train:** Add precise `#tags` at the beginning or end of your notes.
+* *Example:* Tagging a note with `#sql #auth #backend` ensures that those specific tokens will instantly fire the neuron when queried.
+
+### 3. Create "Hub" Neurons (MOCs & Indices)
+Dimension 4 measures inbound links (Popularity, 20% weight). A note that many other notes point to becomes a **hyper-sensitive neuron** that fires easily.
+* **How to train:** Keep your Index notes or Maps of Content (MOCs) updated. The more notes that point to your `[[000-INDEX]]` or `[[Python-Snippets]]` note, the stronger that region of the brain becomes.
+
+### 4. Adjust the Neurotransmitters (Tuning `config.json`)
+You can fine-tune how the brain "thinks" by adjusting `config.json`:
+* **Getting too much garbage?** Raise the `"threshold"` from `0.40` to `0.50` (neurons will require more stimulation to fire).
+* **Not connecting distant ideas?** Raise the `"max_propagation_depth"` from `3` to `4`, or increase the `"synapse_bonus"` from `0.15` to `0.25` so the electrical current travels further across your `[[WikiLinks]]`.
+
+---
+
 ## 📁 Project Structure
 
 ```
