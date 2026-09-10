@@ -1,75 +1,75 @@
-<div align="center"> 
+<div align="center">
 
 <h1>Neural Vault Brain v2.0</h1>
-<strong>Neural binary query engine for Obsidian vaults with Local AI (RAG) capabilities</strong> 
+<strong>Neural binary query engine for Obsidian vaults with Local AI (RAG) capabilities</strong>
 
 <br><br>
 
-<p> 
-<img src="https://img.shields.io/badge/Python-3.7+-3776AB?logo=python&logoColor=white" alt="Python Version" /> 
-<img src="https://img.shields.io/badge/Obsidian-Integration-7C3AED?logo=obsidian&logoColor=white" alt="Obsidian" /> 
-<img src="https://img.shields.io/badge/Dependencies-None%20(Stdlib)-success" alt="Dependencies" /> 
-<img src="https://img.shields.io/badge/RAG-Local%20AI-blue" alt="Local AI RAG" /> 
-<img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="License" /> 
-</p> 
-</div> 
+<p>
+<img src="https://img.shields.io/badge/Python-3.7+-3776AB?logo=python&logoColor=white" alt="Python Version" />
+<img src="https://img.shields.io/badge/Obsidian-Integration-7C3AED?logo=obsidian&logoColor=white" alt="Obsidian" />
+<img src="https://img.shields.io/badge/Dependencies-None%20(Stdlib)-success" alt="Dependencies" />
+<img src="https://img.shields.io/badge/RAG-Local%20AI-blue" alt="Local AI RAG" />
+<img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="License" />
+</p>
+</div>
 
---- 
+---
 
-## Overview 
-Neural Vault Brain models your personal knowledge base as a biological neural network: 
+## Overview
+Neural Vault Brain models your personal knowledge base as a biological neural network:
 
-| Component | Biological Analogy | Function | 
-| :--- | :--- | :--- | 
-| `.md` Note | **Neuron** | Unit of knowledge holding content, tags, and state | 
-| `[[WikiLink]]` | **Synapse** | Weighted edge routing context across concepts | 
-| Search Query | **Action Potential** | Electrical impulse triggering network traversal | 
-| Output | **Binary State** | Activated (`1`, relevant) or Inactive (`0`, irrelevant) | 
+| Component | Biological Analogy | Function |
+| :--- | :--- | :--- |
+| `.md` Note | **Neuron** | Unit of knowledge holding content, tags, and state |
+| `[[WikiLink]]` | **Synapse** | Weighted edge routing context across concepts |
+| Search Query | **Action Potential** | Electrical impulse triggering network traversal |
+| Output | **Binary State** | Activated (`1`, relevant) or Inactive (`0`, irrelevant) |
 
-Compatible with all major AI coding assistants: **Antigravity**, **Claude Code**, **OpenClaw**, **ChatGPT**, **Cursor**, **Copilot**, **Codex**, **Aider**, and **Windsurf**. 
+Compatible with all major AI coding assistants: **Antigravity**, **Claude Code**, **OpenClaw**, **ChatGPT**, **Cursor**, **Copilot**, **Codex**, **Aider**, and **Windsurf**.
 
---- 
+---
 
-## System Architecture 
-```mermaid 
-flowchart TD 
-subgraph Input_Layer ["1. Input Layer"] 
-A[User Query Tokenization] 
-A1[Inhibitory Token Filter '-term'] 
-A --> A1 
-end 
+## System Architecture
+```mermaid
+flowchart TD
+subgraph Input_Layer ["1. Input Layer"]
+A[User Query Tokenization]
+A1[Inhibitory Token Filter '-term']
+A --> A1
+end
 
-subgraph Sensory_Layer ["2. Sensory Layer"] 
-B[LTM Cache Loader] 
-B1[Parse Tags, Titles, Content, Wikilinks] 
-B --> B1 
-end 
+subgraph Sensory_Layer ["2. Sensory Layer"]
+B[LTM Cache Loader]
+B1[Parse Tags, Titles, Content, Wikilinks]
+B --> B1
+end
 
-subgraph Hidden_Layer ["3. Hidden Layer - 4D Scoring Matrix"] 
-C1[Tags: 25%] 
-C2[Title: 30%] 
-C3[TF-IDF: 25%] 
-C4[Links: 20%] 
-C5{Threshold Evaluation: score >= 0.40} 
-C1 & C2 & C3 & C4 --> C5 
-end 
+subgraph Hidden_Layer ["3. Hidden Layer - 4D Scoring Matrix"]
+C1[Tags: 25%]
+C2[Title: 30%]
+C3[TF-IDF: 25%]
+C4[Links: 20%]
+C5{Threshold Evaluation: score >= 0.40}
+C1 & C2 & C3 & C4 --> C5
+end
 
-subgraph Propagation_Layer ["4. Synaptic Propagation"] 
-D[Bidirectional Traversal] 
-D1[Synaptic Thickness Multiplier] 
-D2[Max Depth: 3 Levels] 
-D --> D1 --> D2 
-end 
+subgraph Propagation_Layer ["4. Synaptic Propagation"]
+D[Bidirectional Traversal]
+D1[Synaptic Thickness Multiplier]
+D2[Max Depth: 3 Levels]
+D --> D1 --> D2
+end
 
-subgraph Output_Layer ["5. Output Layer"] 
-E[Activated Neurons Report] 
-E1[Local AI RAG Context Ingestion] 
-E --> E1 
-end 
+subgraph Output_Layer ["5. Output Layer"]
+E[Activated Neurons Report]
+E1[Local AI RAG Context Ingestion]
+E --> E1
+end
 
-Input_Layer --> Sensory_Layer 
-Sensory_Layer --> Hidden_Layer 
-C5 -- Active: 1 --> Propagation_Layer 
+Input_Layer --> Sensory_Layer
+Sensory_Layer --> Hidden_Layer
+C5 -- Active: 1 --> Propagation_Layer
 Propagation_Layer --> Output_Layer
 ```
 
@@ -85,23 +85,23 @@ Propagation_Layer --> Output_Layer
 
 ### Installation
 ```bash
-git clone https://github.com/aandreve/neural-vault-brain.git 
+git clone https://github.com/aandreve/neural-vault-brain.git
 cd neural-vault-brain
 ```
 > **Note:** Zero External Dependencies: Built entirely with the standard Python 3.7+ library.
 
 ### Execution Modes
 ```bash
-# 1. Interactive CLI Mode 
-python scripts/neural_vault_brain.py 
+# 1. Interactive CLI Mode
+python scripts/neural_vault_brain.py
 
-# 2. Local AI Query (Requires active Ollama / LM Studio) 
-python scripts/neural_vault_brain.py --ask "Summarize my recent architecture notes" 
+# 2. Local AI Query (Requires active Ollama / LM Studio)
+python scripts/neural_vault_brain.py --ask "Summarize my recent architecture notes"
 
-# 3. Direct Search with Inhibitory Token 
-python scripts/neural_vault_brain.py "machine learning -python" 
+# 3. Direct Search with Inhibitory Token
+python scripts/neural_vault_brain.py "machine learning -python"
 
-# 4. Structured JSON Output 
+# 4. Structured JSON Output
 python scripts/neural_vault_brain.py --json "database optimization"
 ```
 
@@ -117,7 +117,7 @@ python scripts/neural_vault_brain.py "my query"
 Integrate inside a custom slash command or CLAUDE.md:
 
 ```bash
-CONTEXT=$(python scripts/neural_vault_brain.py "my question") 
+CONTEXT=$(python scripts/neural_vault_brain.py "my question")
 # Inject $CONTEXT into prompt
 ```
 </details>
@@ -134,37 +134,37 @@ python scripts/neural_vault_brain.py "my topic" >> .cursorrules
 Settings are controlled via `scripts/neural_config.json`:
 
 ```json
-{ 
-  "vault_path": "/path/to/your/obsidian/vault", 
-  "weights": { 
-    "tags": 0.25, 
-    "title": 0.30, 
-    "content": 0.25, 
-    "inbound_links": 0.20 
-  }, 
-  "threshold": 0.40, 
-  "synapse_bonus": 0.15, 
-  "backward_synapse_bonus": 0.05, 
-  "max_propagation_depth": 3, 
-  "exclude_patterns": [".obsidian", ".smart-env", "scripts", ".base"], 
-  "local_ai": { 
-    "provider": "ollama", 
-    "endpoint": "http://localhost:11434/api/generate", 
-    "model": "llama3", 
-    "system_prompt": "You are Neural Brain, an expert assistant...", 
-    "context_max_chars": 12000 
-  } 
+{
+  "vault_path": "/path/to/your/obsidian/vault",
+  "weights": {
+    "tags": 0.25,
+    "title": 0.30,
+    "content": 0.25,
+    "inbound_links": 0.20
+  },
+  "threshold": 0.40,
+  "synapse_bonus": 0.15,
+  "backward_synapse_bonus": 0.05,
+  "max_propagation_depth": 3,
+  "exclude_patterns": [".obsidian", ".smart-env", "scripts", ".base"],
+  "local_ai": {
+    "provider": "ollama",
+    "endpoint": "http://localhost:11434/api/generate",
+    "model": "llama3",
+    "system_prompt": "You are Neural Brain, an expert assistant...",
+    "context_max_chars": 12000
+  }
 }
 ```
 
 ### Parameter Tuning Reference
 
-| Objective | Parameter | Recommended Adjustment | 
-| :--- | :--- | :--- | 
-| Increase search recall (more results) | `threshold` | Lower value (e.g., 0.30) | 
-| Increase search precision (fewer results) | `threshold` | Higher value (e.g., 0.50) | 
-| Expand neural traversal depth | `max_propagation_depth` | Increase integer (4 - 5) | 
-| Expand RAG context window | `local_ai.context_max_chars` | Increase limit (16000+) | 
+| Objective | Parameter | Recommended Adjustment |
+| :--- | :--- | :--- |
+| Increase search recall (more results) | `threshold` | Lower value (e.g., 0.30) |
+| Increase search precision (fewer results) | `threshold` | Higher value (e.g., 0.50) |
+| Expand neural traversal depth | `max_propagation_depth` | Increase integer (4 - 5) |
+| Expand RAG context window | `local_ai.context_max_chars` | Increase limit (16000+) |
 
 ## Vault Training Protocols
 Your Obsidian vault represents the physical neural network. Structural maintenance optimizes context synthesis:
@@ -213,11 +213,11 @@ Example: Use "The server uses Nginx as a reverse proxy" instead of "It is used f
 
 ## Directory Structure
 ```text
-neural-vault-brain/ 
-├── scripts/ 
-│ ├── neural_vault_brain.py # Core engine, CLI and RAG interface 
-│ └── neural_config.json # Configuration parameters 
-├── README.md # Technical documentation 
+neural-vault-brain/
+├── scripts/
+│ ├── neural_vault_brain.py # Core engine, CLI and RAG interface
+│ └── neural_config.json # Configuration parameters
+├── README.md # Technical documentation
 └── LICENSE # MIT License specification
 ```
 
