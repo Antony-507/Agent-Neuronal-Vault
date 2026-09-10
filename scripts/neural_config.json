@@ -1,0 +1,21 @@
+{
+  "vault_path": "C:\\ruta\\a\\tu\\vault",
+  "weights": {
+    "tags": 0.25,
+    "title": 0.30,
+    "content": 0.25,
+    "inbound_links": 0.20
+  },
+  "threshold": 0.40,
+  "synapse_bonus": 0.15,
+  "backward_synapse_bonus": 0.05,
+  "max_propagation_depth": 3,
+  "exclude_patterns": [".obsidian", ".smart-env", "scripts", ".base"],
+  "local_ai": {
+    "provider": "ollama",
+    "endpoint": "http://localhost:11434/api/generate",
+    "model": "llama3",
+    "system_prompt": "Eres un asistente experto llamado Neural Brain. Usa el contexto provisto (extraído de la bóveda personal del usuario) para responder la pregunta de forma precisa y concisa. Si la respuesta no está en el contexto, usa tu conocimiento general, pero dale prioridad absoluta al contexto.",
+    "context_max_chars": 12000
+  }
+}
