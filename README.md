@@ -14,6 +14,16 @@
 </p>
 </div>
 
+<div align="center">
+  <img src="assets/vault-ai-interface.png" alt="Neural Vault AI Interface" width="750" />
+  <br><br>
+  <p>
+    <b>Interactive Demonstration:</b> Automatic AI Request Documentation & Vault Expansion
+    <br>
+    <a href="assets/auto-learning-demo.mp4"><b>[Watch Video Demonstration (MP4)]</b></a>
+  </p>
+</div>
+
 ---
 
 ## Overview
@@ -295,14 +305,28 @@ Tailor queries on-the-fly using biological inhibitory signals:
 > * Execute queries with key terms (e.g., `--ask "testing framework"` instead of `--ask "what is the best testing framework"`).
 > * Lower the threshold parameter in `neural_config.json`.
 
+## Bonus Resource: Auto-Learning Skill for Agents
+Expand your Obsidian vault automatically as you pair-program with any AI assistant! We have packaged the **`obsidian-auto-learning`** skill in [`skills/obsidian-auto-learning/SKILL.md`](skills/obsidian-auto-learning/SKILL.md).
+
+Whenever you work with **Antigravity**, **Claude Code**, **Cursor**, **Windsurf**, or **OpenClaw**:
+1. **Verbatim Request Logging:** The AI finishes your task and automatically documents the exact prompt, tools used, and technical solution as a new `.md` note.
+2. **Biological Synapses:** Notes are automatically interconnected with `[[WikiLinks]]` (to MOCs like `[[000-INDICE]]`) and structured `#tags`.
+3. **Compound Intelligence:** The next time you execute `neural_vault_brain.py --ask`, your local neural brain instantly leverages that newly created knowledge!
+
 ## Directory Structure
 ```text
 neural-vault-brain/
+├── assets/
+│   ├── vault-ai-interface.png        # Screenshot of Vault AI & Obsidian Interface
+│   └── auto-learning-demo.mp4        # Video demonstration of automated documentation
 ├── scripts/
-│ ├── neural_vault_brain.py # Core engine, CLI and RAG interface
-│ └── neural_config.json # Configuration parameters
-├── README.md # Technical documentation
-└── LICENSE # MIT License specification
+│   ├── neural_vault_brain.py         # Core engine, CLI and RAG interface
+│   └── neural_config.json            # Configuration parameters
+├── skills/
+│   └── obsidian-auto-learning/
+│       └── SKILL.md                  # Reusable auto-documentation skill for AI agents
+├── README.md                         # Technical documentation
+└── LICENSE                           # MIT License specification
 ```
 
 ## License & Credits
