@@ -1,128 +1,170 @@
-# [*] Neural Vault Brain v2.0
-
-**A neural binary query engine for Obsidian vaults with Local AI (RAG) capabilities.**
-
-Every `.md` note is a **neuron**. Every `[[WikiLink]]` is a **synapse**. Every query fires a **signal** that propagates through the network. Each neuron receives a binary classification: **`1` (relevant)** or **`0` (irrelevant)**.
-
-Works with **any AI coding assistant**: Antigravity, Claude Code, OpenClaw, ChatGPT, Cursor, Copilot, Codex, Aider, Windsurf, and more.
+Aquí tienes el rediseño optimizado del archivo `.md`. Se han eliminado los emojis y caracteres decorativos, incorporando **badges vectoriales (Shields.io con iconos oficiales)**, **diagramas Mermaid interactivos y renderizables**, componentes colapsables (`<details>`), tablas estructuradas y **bloques de llamada nativos de GitHub / Obsidian (`[!NOTE]`, `[!TIP]`, `[!WARNING]`)** que despliegan iconos SVG automáticamente en visores Markdown modernos.
 
 ---
 
-## [A] Architecture (v2.0)
+```markdown
+<div align="center">
 
-```
-                    ┌─────────────────────────────────┐
-                    │       🔌 INPUT LAYER             │
-                    │   User Query → Tokenization      │
-                    │   + Inhibitory Token Filter (-)  │
-                    └──────────────┬──────────────────┘
-                                   │
-                    ┌──────────────▼──────────────────┐
-                    │      [S] SENSORY LAYER            │
-                    │  Instant Load via Cache (LTM)    │
-                    │  Parse tags, titles, content,    │
-                    │  and wikilinks from .md notes    │
-                    └──────────────┬──────────────────┘
-                                   │
-                    ┌──────────────▼──────────────────┐
-                    │       [H] HIDDEN LAYER            │
-                    │  4-Dimensional Weighted Scoring  │
-                    │                                  │
-                    │  ┌──────────┐ ┌──────────┐       │
-                    │  │ Tags 25% │ │Title 30% │       │
-                    │  └──────────┘ └──────────┘       │
-                    │  ┌──────────┐ ┌──────────┐       │
-                    │  │TF-IDF 25%│ │Links 20% │       │
-                    │  └──────────┘ └──────────┘       │
-                    │                                  │
-                    │   Σ Weighted Score → Threshold θ │
-                    │   score ≥ 0.40 → 1 (activated)   │
-                    │   score < 0.40 → 0 (inactive)    │
-                    └──────────────┬──────────────────┘
-                                   │
-                    ┌──────────────▼──────────────────┐
-                    │    [+] SYNAPTIC PROPAGATION       │
-                    │  Bidirectional (Forward/Backward)│
-                    │  Weighted by Synaptic Thickness  │
-                    │  Up to 3 levels deep             │
-                    └──────────────┬──────────────────┘
-                                   │
-                    ┌──────────────▼──────────────────┐
-                    │       [O] OUTPUT LAYER            │
-                    │  Report: activated (1) neurons   │
-                    │  Mode --ask: Local AI RAG Query  │
-                    └─────────────────────────────────┘
-```
+# Neural Vault Brain v2.0
 
-## [*] New in v2.0
+**Neural binary query engine for Obsidian vaults with Local AI (RAG) capabilities**
 
-- **Local AI RAG (`--ask`)**: The neural engine now seamlessly connects to local AIs (like Ollama or LM Studio) to chat with your vault using Neural Retrieval-Augmented Generation.
-- **Long-Term Memory Cache**: Vaults now load instantaneously. The engine detects file modifications and only parses updated notes.
-- **TF-IDF Mathematical Scoring**: Query tokens are weighed by their rarity in your vault. Common words carry little weight, while specific technical terms carry massive weight.
-- **Bidirectional Propagation**: Neural signals now flow forward (through outgoing links) and backward (through incoming links).
-- **Inhibitory Tokens**: Prefix any search word with `-` (e.g., `-wpf`) to completely inhibit and shut down any neuron containing that word.
-- **Synaptic Thickness**: Links in titles or with aliases are treated as stronger synapses, propagating larger neural bonuses.
+<p>
+  <img src="https://img.shields.io/badge/Python-3.7+-3776AB?logo=python&logoColor=white" alt="Python Version" />
+  <img src="https://img.shields.io/badge/Obsidian-Integration-7C3AED?logo=obsidian&logoColor=white" alt="Obsidian" />
+  <img src="https://img.shields.io/badge/Dependencies-None%20(Stdlib)-success" alt="Dependencies" />
+  <img src="https://img.shields.io/badge/RAG-Local%20AI-blue" alt="Local AI RAG" />
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="License" />
+</p>
+
+</div>
 
 ---
 
-## [>] Quick Start
+## Overview
+
+Neural Vault Brain models your personal knowledge base as a biological neural network:
+
+| Component | Biological Analogy | Function |
+| :--- | :--- | :--- |
+| `.md` Note | **Neuron** | Unit of knowledge holding content, tags, and state |
+| `[[WikiLink]]` | **Synapse** | Weighted edge routing context across concepts |
+| Search Query | **Action Potential** | Electrical impulse triggering network traversal |
+| Output | **Binary State** | Activated (`1`, relevant) or Inactive (`0`, irrelevant) |
+
+Compatible with all major AI coding assistants: **Antigravity**, **Claude Code**, **OpenClaw**, **ChatGPT**, **Cursor**, **Copilot**, **Codex**, **Aider**, and **Windsurf**.
+
+---
+
+## System Architecture
+
+```mermaid
+flowchart TD
+    subgraph Input_Layer [1. Input Layer]
+        A[User Query Tokenization]
+        A1[Inhibitory Token Filter '-term']
+        A --> A1
+    end
+
+    subgraph Sensory_Layer [2. Sensory Layer]
+        B[LTM Cache Loader]
+        B1[Parse Tags, Titles, Content, Wikilinks]
+        B --> B1
+    end
+
+    subgraph Hidden_Layer [3. Hidden Layer - 4D Scoring Matrix]
+        C1[Tags: 25%]
+        C2[Title: 30%]
+        C3[TF-IDF: 25%]
+        C4[Links: 20%]
+        C5{Threshold Evaluation: score >= 0.40}
+        C1 & C2 & C3 & C4 --> C5
+    end
+
+    subgraph Propagation_Layer [4. Synaptic Propagation]
+        D[Bidirectional Traversal]
+        D1[Synaptic Thickness Multiplier]
+        D2[Max Depth: 3 Levels]
+        D --> D1 --> D2
+    end
+
+    subgraph Output_Layer [5. Output Layer]
+        E[Activated Neurons Report]
+        E1[Local AI RAG Context Ingestion]
+        E --> E1
+    end
+
+    Input_Layer --> Sensory_Layer
+    Sensory_Layer --> Hidden_Layer
+    C5 -- Active: 1 --> Propagation_Layer
+    Propagation_Layer --> Output_Layer
+```
+
+---
+
+## Release Notes (v2.0)
+
+> [!NOTE]
+> **Local AI RAG (`--ask`)**: Seamless connection with Ollama or LM Studio to execute neural retrieval-augmented queries directly against your vault.
+
+* **Long-Term Memory Cache**: Instantaneous startup with file modification detection (only updated notes are re-parsed).
+* **TF-IDF Mathematical Scoring**: Query tokens are weighted based on their frequency distribution within the vault.
+* **Bidirectional Propagation**: Neural impulses travel both downstream (outgoing links) and upstream (incoming references).
+* **Inhibitory Filters**: Prefix any token with `-` (e.g., `-wpf`) to completely suppress matching nodes.
+* **Synaptic Thickness**: Enhanced weight multipliers assigned to headers and alias links.
+
+---
+
+## Quick Start
+
+### Installation
 
 ```bash
-# Clone
 git clone https://github.com/aandreve/neural-vault-brain.git
 cd neural-vault-brain
+```
 
-# Edit neural_config.json — set your vault path
-# "vault_path": "/path/to/your/obsidian/vault"
+> [!TIP]
+> **Zero External Dependencies**: Built entirely with the standard Python 3.7+ library.
 
-# Run interactive mode
+### Execution Modes
+
+```bash
+# 1. Interactive CLI Mode
 python scripts/neural_vault_brain.py
 
-# Chat with your vault via Local AI (requires Ollama/LM Studio running)
-python scripts/neural_vault_brain.py --ask "Resume my recent architecture notes"
+# 2. Local AI Query (Requires active Ollama / LM Studio)
+python scripts/neural_vault_brain.py --ask "Summarize my recent architecture notes"
 
-# Direct search query with inhibitory tokens
+# 3. Direct Search with Inhibitory Token
 python scripts/neural_vault_brain.py "machine learning -python"
 
-# JSON output (for programmatic use)
+# 4. Structured JSON Output
 python scripts/neural_vault_brain.py --json "database optimization"
 ```
 
-**No dependencies required.** Pure Python 3.7+ stdlib only.
-
 ---
 
-## [AI] AI Assistant Integration
+## AI Assistant Integration
 
-Neural Vault Brain can inject relevant vault context into **any** AI coding assistant. Because this is the Open Source generic version, you can adapt it to any tool.
+<details open>
+<summary><b>Generic Context Extraction</b></summary>
 
 ```bash
-# Generic context block
 python scripts/neural_vault_brain.py "my query"
 ```
+</details>
 
-### Integration Examples
+<details>
+<summary><b>Claude Code Configuration</b></summary>
 
-**Claude Code** — Use in a slash command or CLAUDE.md:
+Integrate inside a custom slash command or `CLAUDE.md`:
+
 ```bash
 CONTEXT=$(python scripts/neural_vault_brain.py "my question")
-# Inject $CONTEXT into your prompt
+# Inject $CONTEXT into prompt
 ```
+</details>
 
-**Cursor IDE** — Pipe into .cursorrules:
+<details>
+<summary><b>Cursor IDE Rules</b></summary>
+
+Append dynamic vault context into `.cursorrules`:
+
 ```bash
 python scripts/neural_vault_brain.py "my topic" >> .cursorrules
 ```
+</details>
 
 ---
 
-## [C] Configuration
+## Configuration
 
-Edit `neural_config.json` to customize the brain:
+Settings are controlled via `scripts/neural_config.json`:
 
 ```json
 {
-  "vault_path": "C:\\ruta\\a\\tu\\vault",
+  "vault_path": "/path/to/your/obsidian/vault",
   "weights": {
     "tags": 0.25,
     "title": 0.30,
@@ -138,82 +180,97 @@ Edit `neural_config.json` to customize the brain:
     "provider": "ollama",
     "endpoint": "http://localhost:11434/api/generate",
     "model": "llama3",
-    "system_prompt": "Eres un asistente experto llamado Neural Brain...",
+    "system_prompt": "You are Neural Brain, an expert assistant...",
     "context_max_chars": 12000
   }
 }
 ```
 
-### Tuning Tips
+### Parameter Tuning Reference
 
-| Goal | Action |
-|:---|:---|
-| More search results | Lower `threshold` (e.g., 0.30) |
-| Fewer, precise results | Raise `threshold` (e.g., 0.50) |
-| Wider propagation | Increase `max_propagation_depth` |
-| Increase RAG context | Increase `local_ai.context_max_chars` |
-
----
-
-## [T] How to "Train" Your Vault (For Future Customizable AI)
-
-Because this is a structural network rather than a pre-trained LLM, **your Obsidian vault is the neural network**. "Training" it means improving your notes and the connections between them so that in the future, your Personal AI can reason perfectly over your second brain.
-
-Every time you write in Obsidian, you are wiring the brain. Here are the 4 ways to train it:
-
-### 1. Strengthen Synapses (Improve Propagation)
-The system propagates activation through `[[WikiLinks]]`. 
-* **How to train:** Whenever you create a new note, link it to existing relevant notes. If Note A links to Note B, any query that activates Note A will send an electrical "bonus" to Note B.
-* *Bonus (Synaptic Thickness):* Links inside Header blocks (`# `) carry double the weight. Use headers for your most important links!
-
-### 2. Sharpen Receptors (Use Tags)
-Tags are heavily weighted (25%) because they act as direct conceptual receptors.
-* **How to train:** Add precise `#tags` at the beginning or end of your notes.
-* *Example:* Tagging a note with `#sql #auth #backend` ensures that those specific tokens will instantly fire the neuron when queried.
-
-### 3. Create "Hub" Neurons (MOCs & Indices)
-Dimension 4 measures inbound links (Popularity, 20% weight). A note that many other notes point to becomes a **hyper-sensitive neuron** that fires easily.
-* **How to train:** Keep your Index notes or Maps of Content (MOCs) updated. The more notes that point to your `[[000-INDEX]]` or `[[Python-Snippets]]` note, the stronger that region of the brain becomes.
-
-### 4. Provide Clean Context for Local AI
-When using the `--ask` command, the AI relies entirely on the content of the activated neurons.
-* **How to train:** Write your notes in clear, declarative sentences. Avoid ambiguous pronouns. A note that explicitly states "The server uses Nginx for reverse proxying" is infinitely better for AI ingestion than "We use it for proxying".
+| Objective | Parameter | Recommended Adjustment |
+| :--- | :--- | :--- |
+| Increase search recall (more results) | `threshold` | Lower value (e.g., `0.30`) |
+| Increase search precision (fewer results) | `threshold` | Higher value (e.g., `0.50`) |
+| Expand neural traversal depth | `max_propagation_depth` | Increase integer (`4` - `5`) |
+| Expand RAG context window | `local_ai.context_max_chars` | Increase limit (`16000`+) |
 
 ---
 
-## [!] Troubleshooting
+## Vault Training Protocols
 
-### Error: `[WinError 10061]` when using `--ask`
-This means the Neural Brain tried to contact a Local AI provider but the connection was refused.
-1. **Ensure your Local AI is running**: If using Ollama, open the app. If using LM Studio, start the Local Server.
-2. **Check your Endpoint**: The default endpoint in `neural_config.json` is `http://localhost:11434/api/generate` (Ollama). If you are using LM Studio, change the endpoint in `neural_config.json` to your server URL (usually `http://localhost:1234/v1/chat/completions`) and change `"provider": "openai"`.
-
-### "La red neuronal no encontró contexto relevante"
-This occurs if the neural threshold wasn't met by any notes. 
-* **Fix**: Try removing common stopwords (like "what", "is", "tell", "me") from your query, or lower the `threshold` in `neural_config.json`. The engine works best with direct keyword searches (e.g., `--ask "testing framework"` instead of `--ask "what is the best testing framework"`).
-
----
-
-## [DIR] Project Structure
+Your Obsidian vault represents the physical neural network. Structural maintenance optimizes context synthesis:
 
 ```
+[Knowledge Base] ---> [Structured Links] ---> [Weighted Tags] ---> [Optimized AI Context]
+```
+
+<details open>
+<summary><b>1. Strengthen Synapses (Propagation Layer)</b></summary>
+
+Connect new concepts to existing nodes using `[[WikiLinks]]`.
+* Activation in Note A routes an electrical threshold bonus to Note B.
+* **Header Priority**: Links placed inside header tags (`# Heading`) receive double synaptic weight.
+</details>
+
+<details>
+<summary><b>2. Refine Receptors (Tagging Strategy)</b></summary>
+
+Tags carry a 25% base scoring weight as direct conceptual triggers.
+* Define technical domains using specific tags (e.g., `#sql`, `#auth`, `#backend`).
+* Precise tags guarantee immediate activation upon query execution.
+</details>
+
+<details>
+<summary><b>3. Establish Hub Neurons (Maps of Content)</b></summary>
+
+Inbound links account for 20% of node scoring (Popularity Factor).
+* Central indices (MOCs like `[[000-INDEX]]` or `[[Python-Snippets]]`) function as high-sensitivity junction hubs.
+</details>
+
+<details>
+<summary><b>4. Declarative Context Formatting</b></summary>
+
+The `--ask` engine injects activated node content directly into the model context.
+* Prefer clear, declarative sentences over ambiguous pronouns.
+* Example: Use *"The server uses Nginx as a reverse proxy"* instead of *"It is used for proxying"*.
+</details>
+
+---
+
+## Troubleshooting
+
+> [!WARNING]
+> **Connection Refused (`WinError 10061`) when executing `--ask`**
+> * Verify that the local engine daemon is active (Ollama or LM Studio).
+> * Validate the target endpoint in `neural_config.json`:
+>   * **Ollama default**: `http://localhost:11434/api/generate` (`"provider": "ollama"`)
+>   * **LM Studio default**: `http://localhost:1234/v1/chat/completions` (`"provider": "openai"`)
+
+> [!IMPORTANT]
+> **No relevant context found by the neural network**
+> * Remove conversational stopwords from queries (`what`, `is`, `tell`, `how`).
+> * Execute queries with key terms (e.g., `--ask "testing framework"` instead of `--ask "what is the best testing framework"`).
+> * Lower the `threshold` parameter in `neural_config.json`.
+
+---
+
+## Directory Structure
+
+```text
 neural-vault-brain/
 ├── scripts/
-│   ├── neural_vault_brain.py   # Core engine + CLI + RAG (zero dependencies)
-│   └── neural_config.json      # Editable configuration
-├── README.md                   # This file
-└── LICENSE                     # MIT License
+│   ├── neural_vault_brain.py   # Core engine, CLI and RAG interface
+│   └── neural_config.json      # Configuration parameters
+├── README.md                   # Technical documentation
+└── LICENSE                     # MIT License specification
 ```
 
 ---
 
-## [L] License
+## License & Credits
 
-MIT License — see [LICENSE](LICENSE).
-
----
-
-## [C] Credits
-
-Created by **Amir Andreve**.
-Inspired by neural network architectures applied to knowledge management. Built for the Obsidian community and the AI-assisted development ecosystem.
+* **License**: Released under the [MIT License](LICENSE).
+* **Author**: Developed by **Amir Andreve**.
+* **Design Philosophy**: Neural graph traversal applied to decentralized personal knowledge management.
+```
