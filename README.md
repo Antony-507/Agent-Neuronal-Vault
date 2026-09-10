@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/logo.png" alt="Neural Vault Brain Logo" width="140" />
+
 <h1>Neural Vault Brain v2.0</h1>
 <strong>Neural binary query engine for Obsidian vaults with Local AI (RAG) capabilities</strong>
 
@@ -316,7 +318,8 @@ Whenever you work with **Antigravity**, **Claude Code**, **Cursor**, **Windsurf*
 ```text
 neural-vault-brain/
 ├── assets/
-│   ├── vault-ai-interface-v2.png        # Screenshot of Vault AI & Obsidian Interface
+│   ├── logo.png                      # Project logo (Biocybernetic Brain)
+│   ├── vault-ai-interface-v2.png     # Screenshot of Vault AI & Obsidian Interface
 │   └── auto-learning-demo.gif        # Animated demonstration of automated documentation
 ├── scripts/
 │   ├── neural_vault_brain.py         # Core engine, CLI and RAG interface
