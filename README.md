@@ -196,6 +196,90 @@ Prefer clear, declarative sentences over ambiguous pronouns.
 Example: Use "The server uses Nginx as a reverse proxy" instead of "It is used for proxying".
 </details>
 
+## Personalization & Custom RAG Profiles
+Neural Vault Brain can be fine-tuned to mirror your unique cognitive workflow and hardware constraints across 4 customizable layers:
+
+### 1. Archetype Presets (`neural_config.json`)
+
+<details open><summary><b>[Dev] The Software Engineer / Developer Profile</b></summary>
+
+> **Goal:** Instant code retrieval, exact architectural patterns, strict tag routing.
+
+```json
+{
+  "weights": {
+    "tags": 0.40,
+    "title": 0.30,
+    "content": 0.15,
+    "inbound_links": 0.15
+  },
+  "threshold": 0.35,
+  "local_ai": {
+    "model": "qwen2.5-coder:7b",
+    "system_prompt": "You are CodeBrain, a senior staff software engineer. Provide concise, production-ready code examples adhering strictly to the user's documented design patterns and architectural notes."
+  }
+}
+```
+</details>
+
+<details><summary><b>[Research] The Academic / Deep Researcher Profile</b></summary>
+
+> **Goal:** Deep conceptual synthesis, heavy reliance on note prose, cross-domain link discovery.
+
+```json
+{
+  "weights": {
+    "tags": 0.10,
+    "title": 0.20,
+    "content": 0.45,
+    "inbound_links": 0.25
+  },
+  "threshold": 0.30,
+  "max_propagation_depth": 4,
+  "synapse_bonus": 0.20,
+  "local_ai": {
+    "model": "llama3:8b",
+    "context_max_chars": 20000,
+    "system_prompt": "You are ScholarBrain, a research synthesis assistant. Synthesize connected ideas, compare opposing concepts, and cite related note titles directly from the vault context."
+  }
+}
+```
+</details>
+
+<details><summary><b>[Management] The Project Manager / Executive Profile</b></summary>
+
+> **Goal:** High-level summaries from Maps of Content (MOCs), tracking action items and decisions.
+
+```json
+{
+  "weights": {
+    "tags": 0.20,
+    "title": 0.25,
+    "content": 0.20,
+    "inbound_links": 0.35
+  },
+  "threshold": 0.40,
+  "local_ai": {
+    "model": "mistral:7b",
+    "system_prompt": "You are TaskMaster, an executive assistant. Extract actionable deliverables, deadlines, and key meeting conclusions directly from the provided vault context."
+  }
+}
+```
+</details>
+
+### 2. Hardware-Aware Scaling
+
+| Hardware Tier | Recommended Local Model | `context_max_chars` | Notes |
+| :--- | :--- | :--- | :--- |
+| **Low-End / CPU-only** (8GB RAM) | `llama3.2:1b`, `llama3.2:3b`, `phi3:mini` | `6000` - `8000` | Ultra-fast inference, minimal memory footprint |
+| **Mid-Range / 6-8GB VRAM** | `llama3:8b`, `qwen2.5:7b`, `mistral:7b` | `12000` - `16000` | Ideal balance of reasoning depth and latency |
+| **High-End / 16GB+ VRAM** | `qwen2.5:14b`, `command-r`, `llama3:70b-q4` | `24000` - `32000` | Full multi-note context digestion without truncation |
+
+### 3. Dynamic Cognitive Filtering
+Tailor queries on-the-fly using biological inhibitory signals:
+* **Domain exclusion:** `python scripts/neural_vault_brain.py --ask "architecture -legacy -deprecated"`
+* **Language/Stack isolation:** `python scripts/neural_vault_brain.py --ask "authentication -frontend"`
+
 ## Troubleshooting
 
 > [!WARNING]
