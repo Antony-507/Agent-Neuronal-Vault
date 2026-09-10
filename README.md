@@ -1,6 +1,9 @@
 <div align="center"> 
-# Neural Vault Brain v2.0 
-**Neural binary query engine for Obsidian vaults with Local AI (RAG) capabilities** 
+
+<h1>Neural Vault Brain v2.0</h1>
+<strong>Neural binary query engine for Obsidian vaults with Local AI (RAG) capabilities</strong> 
+
+<br><br>
 
 <p> 
 <img src="https://img.shields.io/badge/Python-3.7+-3776AB?logo=python&logoColor=white" alt="Python Version" /> 
@@ -30,19 +33,19 @@ Compatible with all major AI coding assistants: **Antigravity**, **Claude Code**
 ## System Architecture 
 ```mermaid 
 flowchart TD 
-subgraph Input_Layer [1. Input Layer] 
+subgraph Input_Layer ["1. Input Layer"] 
 A[User Query Tokenization] 
 A1[Inhibitory Token Filter '-term'] 
 A --> A1 
 end 
 
-subgraph Sensory_Layer [2. Sensory Layer] 
+subgraph Sensory_Layer ["2. Sensory Layer"] 
 B[LTM Cache Loader] 
 B1[Parse Tags, Titles, Content, Wikilinks] 
 B --> B1 
 end 
 
-subgraph Hidden_Layer [3. Hidden Layer - 4D Scoring Matrix] 
+subgraph Hidden_Layer ["3. Hidden Layer - 4D Scoring Matrix"] 
 C1[Tags: 25%] 
 C2[Title: 30%] 
 C3[TF-IDF: 25%] 
@@ -51,14 +54,14 @@ C5{Threshold Evaluation: score >= 0.40}
 C1 & C2 & C3 & C4 --> C5 
 end 
 
-subgraph Propagation_Layer [4. Synaptic Propagation] 
+subgraph Propagation_Layer ["4. Synaptic Propagation"] 
 D[Bidirectional Traversal] 
 D1[Synaptic Thickness Multiplier] 
 D2[Max Depth: 3 Levels] 
 D --> D1 --> D2 
 end 
 
-subgraph Output_Layer [5. Output Layer] 
+subgraph Output_Layer ["5. Output Layer"] 
 E[Activated Neurons Report] 
 E1[Local AI RAG Context Ingestion] 
 E --> E1 
