@@ -7,12 +7,13 @@
 
 <br><br>
 
-<p>
-<img src="https://img.shields.io/badge/Python-3.7+-3776AB?logo=python&logoColor=white" alt="Python Version" />
-<img src="https://img.shields.io/badge/Obsidian-Integration-7C3AED?logo=obsidian&logoColor=white" alt="Obsidian" />
-<img src="https://img.shields.io/badge/Dependencies-None%20(Stdlib)-success" alt="Dependencies" />
-<img src="https://img.shields.io/badge/RAG-Local%20AI-blue" alt="Local AI RAG" />
-<img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="License" />
+<p> 
+<img src="https://img.shields.io/badge/Python-3.7+-3776AB?logo=python&logoColor=white" alt="Python Version" /> 
+<img src="https://img.shields.io/badge/Obsidian-Integration-7C3AED?logo=obsidian&logoColor=white" alt="Obsidian" /> 
+<img src="https://img.shields.io/badge/Dependencies-None%20(Stdlib)-success" alt="Dependencies" /> 
+<img src="https://img.shields.io/badge/RAG-Local%20AI-blue" alt="Local AI RAG" /> 
+<img src="https://img.shields.io/badge/Discord-antony507-5865F2?logo=discord&logoColor=white" alt="Discord" /> 
+<img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="License" /> 
 </p>
 </div>
 
@@ -333,5 +334,5 @@ neural-vault-brain/
 
 ## License & Credits
 * **License**: Released under the [MIT License](LICENSE).
-* **Author**: Developed by Amir Andreve.
+* **Author**: Developed by Amir Andreve (Discord: `antony507`).
 * **Design Philosophy**: Neural graph traversal applied to decentralized personal knowledge management.
