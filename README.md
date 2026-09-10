@@ -1,6 +1,4 @@
-Aquí tienes el rediseño optimizado del archivo `.md`. Se han eliminado los emojis y caracteres decorativos, incorporando **badges vectoriales (Shields.io con iconos oficiales)**, **diagramas Mermaid interactivos y renderizables**, componentes colapsables (`<details>`), tablas estructuradas y **bloques de llamada nativos de GitHub / Obsidian (`[!NOTE]`, `[!TIP]`, `[!WARNING]`)** que despliegan iconos SVG automáticamente en visores Markdown modernos.
 
----
 
 ```markdown
 <div align="center">
