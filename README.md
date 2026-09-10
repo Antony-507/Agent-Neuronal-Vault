@@ -1,4 +1,4 @@
-# 🧠 Neural Vault Brain v2.0
+# [*] Neural Vault Brain v2.0
 
 **A neural binary query engine for Obsidian vaults with Local AI (RAG) capabilities.**
 
@@ -8,7 +8,7 @@ Works with **any AI coding assistant**: Antigravity, Claude Code, OpenClaw, Chat
 
 ---
 
-## 🏗️ Architecture (v2.0)
+## [A] Architecture (v2.0)
 
 ```
                     ┌─────────────────────────────────┐
@@ -18,14 +18,14 @@ Works with **any AI coding assistant**: Antigravity, Claude Code, OpenClaw, Chat
                     └──────────────┬──────────────────┘
                                    │
                     ┌──────────────▼──────────────────┐
-                    │      👁️ SENSORY LAYER            │
+                    │      [S] SENSORY LAYER            │
                     │  Instant Load via Cache (LTM)    │
                     │  Parse tags, titles, content,    │
                     │  and wikilinks from .md notes    │
                     └──────────────┬──────────────────┘
                                    │
                     ┌──────────────▼──────────────────┐
-                    │       🧠 HIDDEN LAYER            │
+                    │       [H] HIDDEN LAYER            │
                     │  4-Dimensional Weighted Scoring  │
                     │                                  │
                     │  ┌──────────┐ ┌──────────┐       │
@@ -41,20 +41,20 @@ Works with **any AI coding assistant**: Antigravity, Claude Code, OpenClaw, Chat
                     └──────────────┬──────────────────┘
                                    │
                     ┌──────────────▼──────────────────┐
-                    │    ⚡ SYNAPTIC PROPAGATION       │
+                    │    [+] SYNAPTIC PROPAGATION       │
                     │  Bidirectional (Forward/Backward)│
                     │  Weighted by Synaptic Thickness  │
                     │  Up to 3 levels deep             │
                     └──────────────┬──────────────────┘
                                    │
                     ┌──────────────▼──────────────────┐
-                    │       📊 OUTPUT LAYER            │
+                    │       [O] OUTPUT LAYER            │
                     │  Report: activated (1) neurons   │
                     │  Mode --ask: Local AI RAG Query  │
                     └─────────────────────────────────┘
 ```
 
-## ✨ New in v2.0
+## [*] New in v2.0
 
 - **Local AI RAG (`--ask`)**: The neural engine now seamlessly connects to local AIs (like Ollama or LM Studio) to chat with your vault using Neural Retrieval-Augmented Generation.
 - **Long-Term Memory Cache**: Vaults now load instantaneously. The engine detects file modifications and only parses updated notes.
@@ -65,7 +65,7 @@ Works with **any AI coding assistant**: Antigravity, Claude Code, OpenClaw, Chat
 
 ---
 
-## ⚡ Quick Start
+## [>] Quick Start
 
 ```bash
 # Clone
@@ -92,7 +92,7 @@ python scripts/neural_vault_brain.py --json "database optimization"
 
 ---
 
-## 🤖 AI Assistant Integration
+## [AI] AI Assistant Integration
 
 Neural Vault Brain can inject relevant vault context into **any** AI coding assistant. Because this is the Open Source generic version, you can adapt it to any tool.
 
@@ -116,7 +116,7 @@ python scripts/neural_vault_brain.py "my topic" >> .cursorrules
 
 ---
 
-## ⚙️ Configuration
+## [C] Configuration
 
 Edit `neural_config.json` to customize the brain:
 
@@ -155,7 +155,7 @@ Edit `neural_config.json` to customize the brain:
 
 ---
 
-## 🎓 How to "Train" Your Vault (For Future Customizable AI)
+## [T] How to "Train" Your Vault (For Future Customizable AI)
 
 Because this is a structural network rather than a pre-trained LLM, **your Obsidian vault is the neural network**. "Training" it means improving your notes and the connections between them so that in the future, your Personal AI can reason perfectly over your second brain.
 
@@ -181,7 +181,7 @@ When using the `--ask` command, the AI relies entirely on the content of the act
 
 ---
 
-## 🛠️ Troubleshooting
+## [!] Troubleshooting
 
 ### Error: `[WinError 10061]` when using `--ask`
 This means the Neural Brain tried to contact a Local AI provider but the connection was refused.
@@ -194,7 +194,7 @@ This occurs if the neural threshold wasn't met by any notes.
 
 ---
 
-## 📁 Project Structure
+## [DIR] Project Structure
 
 ```
 neural-vault-brain/
@@ -207,13 +207,13 @@ neural-vault-brain/
 
 ---
 
-## 📄 License
+## [L] License
 
 MIT License — see [LICENSE](LICENSE).
 
 ---
 
-## 🙏 Credits
+## [C] Credits
 
 Created by **Amir Andreve**.
 Inspired by neural network architectures applied to knowledge management. Built for the Obsidian community and the AI-assisted development ecosystem.

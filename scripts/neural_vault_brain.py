@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                     🧠 NEURAL VAULT BRAIN v2.0                             ║
+║                     [*] NEURAL VAULT BRAIN v2.0                            ║
 ║            Motor de Consulta Neuronal Binario para Obsidian                ║
 ║                                                                            ║
 ║  Versión: Open Source Version (Customizable)                               ║
@@ -468,22 +468,22 @@ class NeuralVaultBrain:
         lines = []
         lines.append("")
         lines.append("=" * 78)
-        lines.append("  🧠 NEURAL VAULT BRAIN v2.0 — Reporte de Activación Neuronal")
+        lines.append("  [*] NEURAL VAULT BRAIN v2.0 — Reporte de Activación Neuronal")
         lines.append("=" * 78)
         lines.append("")
-        lines.append(f"  📝 Consulta:          \"{stats['query']}\"")
-        lines.append(f"  🔑 Tokens:            {stats['tokens']}")
+        lines.append(f"  [Q] Consulta:          \"{stats['query']}\"")
+        lines.append(f"  [T] Tokens:            {stats['tokens']}")
         if stats.get('inhibitory_tokens'):
-            lines.append(f"  ⛔ Inhibidores:       {stats['inhibitory_tokens']}")
-        lines.append(f"  🧪 Umbral θ:          {stats['threshold']}")
-        lines.append(f"  📊 Total neuronas:    {stats['total_neurons']}")
-        lines.append(f"  ✅ Activadas (1):     {stats['activated_count']} ({stats['activation_rate']})")
+            lines.append(f"  [-] Inhibidores:       {stats['inhibitory_tokens']}")
+        lines.append(f"  [~] Umbral θ:          {stats['threshold']}")
+        lines.append(f"  [#] Total neuronas:    {stats['total_neurons']}")
+        lines.append(f"  [+] Activadas (1):     {stats['activated_count']} ({stats['activation_rate']})")
         lines.append(f"     ├─ Directas:       {stats['directly_activated']}")
         lines.append(f"     └─ Propagadas:     {stats['propagated_count']}")
         lines.append("")
 
         lines.append("─" * 78)
-        lines.append("  ✅ NEURONAS ACTIVADAS (signal = 1)")
+        lines.append("  [+] NEURONAS ACTIVADAS (signal = 1)")
         lines.append("─" * 78)
 
         if activated:
@@ -510,15 +510,15 @@ def ask_local_ai(brain, query):
     Realiza una búsqueda neuronal, ensambla un prompt gigante con el contexto,
     y consulta a una IA local (ej. Ollama o OpenAI-compatible).
     """
-    print(f"\n  🧠 Iniciando Retrieval Neuronal para: '{query}'...")
+    print(f"\n  [*] Iniciando Retrieval Neuronal para: '{query}'...")
     result = brain.query(query)
     activated = result["activated"]
     
     if not activated:
-        print("  ⚠️ La red neuronal no encontró contexto relevante en el Vault.")
+        print("  [!] La red neuronal no encontró contexto relevante en el Vault.")
         context = "No hay contexto disponible en la bóveda."
     else:
-        print(f"  ✅ {len(activated)} neuronas activadas. Ensamblando contexto...")
+        print(f"  [+] {len(activated)} neuronas activadas. Ensamblando contexto...")
         context_parts = []
         current_chars = 0
         max_chars = brain.config["local_ai"].get("context_max_chars", 12000)
@@ -541,7 +541,7 @@ def ask_local_ai(brain, query):
     
     prompt = f"Contexto de la bóveda del usuario:\n{context}\n\nPregunta del usuario: {query}"
     
-    print(f"  🤖 Contactando IA Local ({provider} - {model}) vía {endpoint}...\n")
+    print(f"  [AI] Contactando IA Local ({provider} - {model}) vía {endpoint}...\n")
     print("  " + "─"*76)
     
     data = {}
@@ -596,10 +596,10 @@ def ask_local_ai(brain, query):
                                 pass
         print("\n  " + "─"*76 + "\n")
     except urllib.error.URLError as e:
-        print(f"\n  ❌ Error conectando a la IA Local: {e.reason}")
+        print(f"\n  [ERR] Error conectando a la IA Local: {e.reason}")
         print("  Asegúrate de que Ollama, LM Studio o tu IA local está encendida y el endpoint es correcto en config.json.\n")
     except Exception as e:
-        print(f"\n  ❌ Error en RAG: {str(e)}\n")
+        print(f"\n  [ERR] Error en RAG: {str(e)}\n")
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -609,7 +609,7 @@ def ask_local_ai(brain, query):
 def print_banner():
     print("""
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                     🧠 NEURAL VAULT BRAIN v2.0                             ║
+║                     [*] NEURAL VAULT BRAIN v2.0                            ║
 ║            Motor de Consulta Neuronal Binario para Obsidian                ║
 ║                                                                            ║
 ║  Características: Caché Larga Duración | RAG (IA Local) | Inhibición       ║
@@ -623,10 +623,10 @@ def main():
     brain = NeuralVaultBrain(config)
 
     print_banner()
-    print(f"  📂 Vault: {brain.vault_path}")
-    print(f"  ⏳ Despertando red neuronal (verificando caché)...")
+    print(f"  [DIR] Vault: {brain.vault_path}")
+    print(f"  [...] Despertando red neuronal (verificando caché)...")
     total, parsed, cached = brain.load_vault()
-    print(f"  ✅ {total} neuronas listas. ({cached} de caché, {parsed} parseadas frescas)\n")
+    print(f"  [+] {total} neuronas listas. ({cached} de caché, {parsed} parseadas frescas)\n")
 
     args = sys.argv[1:]
     if args:
@@ -663,26 +663,26 @@ def main():
 
     while True:
         try:
-            query = input("  🧠 Consulta > ").strip()
+            query = input("  [?] Consulta > ").strip()
         except (EOFError, KeyboardInterrupt):
-            print("\n  👋 ¡Hasta pronto!")
+            print("\n  [BYE] ¡Hasta pronto!")
             break
 
         if not query:
             continue
         if query.lower() in ("salir", "exit", "quit", "q"):
-            print("  👋 ¡Hasta pronto!")
+            print("  [BYE] ¡Hasta pronto!")
             break
         if query.startswith("--ask "):
             ask_local_ai(brain, query[6:])
             continue
         if query.lower() == "stats":
-            print(f"\n  📊 Neuronas cargadas: {brain.total_notes}")
-            print(f"  🔗 Max enlaces entrantes: {brain.max_inbound}")
-            print(f"  ⚙️  Umbral θ: {brain.threshold}")
-            print(f"  ⚡ Bonus sináptico (Forward): {brain.synapse_bonus}")
-            print(f"  ⚡ Bonus sináptico (Backward): {brain.backward_synapse_bonus}")
-            print(f"  🔄 Profundidad max: {brain.max_depth}\n")
+            print(f"\n  [#] Neuronas cargadas: {brain.total_notes}")
+            print(f"  [L] Max enlaces entrantes: {brain.max_inbound}")
+            print(f"  [~] Umbral θ: {brain.threshold}")
+            print(f"  [+] Bonus sináptico (Forward): {brain.synapse_bonus}")
+            print(f"  [-] Bonus sináptico (Backward): {brain.backward_synapse_bonus}")
+            print(f"  [D] Profundidad max: {brain.max_depth}\n")
             continue
         if query.lower() == "config":
             print(f"\n  {json.dumps(config, ensure_ascii=False, indent=2)}\n")
