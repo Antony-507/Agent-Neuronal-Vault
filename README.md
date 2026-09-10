@@ -181,6 +181,19 @@ When using the `--ask` command, the AI relies entirely on the content of the act
 
 ---
 
+## 🛠️ Troubleshooting
+
+### Error: `[WinError 10061]` when using `--ask`
+This means the Neural Brain tried to contact a Local AI provider but the connection was refused.
+1. **Ensure your Local AI is running**: If using Ollama, open the app. If using LM Studio, start the Local Server.
+2. **Check your Endpoint**: The default endpoint in `neural_config.json` is `http://localhost:11434/api/generate` (Ollama). If you are using LM Studio, change the endpoint in `neural_config.json` to your server URL (usually `http://localhost:1234/v1/chat/completions`) and change `"provider": "openai"`.
+
+### "La red neuronal no encontró contexto relevante"
+This occurs if the neural threshold wasn't met by any notes. 
+* **Fix**: Try removing common stopwords (like "what", "is", "tell", "me") from your query, or lower the `threshold` in `neural_config.json`. The engine works best with direct keyword searches (e.g., `--ask "testing framework"` instead of `--ask "what is the best testing framework"`).
+
+---
+
 ## 📁 Project Structure
 
 ```
